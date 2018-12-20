@@ -1,0 +1,144 @@
+/* normalize.css */
+
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    color: #282828;
+
+}
+
+main,
+details {
+    display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a:hover {
+    color: #0056df;
+    text-decoration: underline;
+}
+
+b,
+strong {
+    font-weight: bolder;
+}
+
+small {
+    font-size: 80%;
+}
+
+img {
+    border-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+}
+
+button,
+input {
+    overflow: visible;
+}
+
+button,
+select {
+    text-transform: none;
+}
+
+button,
+[type="button"],
+[type="submit"] {
+    -webkit-appearance: button;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText;
+}
+
+textarea {
+    overflow: auto;
+}
+
+[type="radio"],
+[type="checkbox"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit;
+}
+
+[hidden] {
+    display: none;
+}
+
+/* grid */
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 90%;
+    }
+}
+
+/* header */ 
+
+.header {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5em 0;
+    background-image: linear-gradient(120deg, #79e6a1 0%, #6dce91 100%);
+}
+
+.logo {
+    display: inline-block;
+    padding-top: .313em;
+    padding-bottom: .313em;
+    font-size: 1.25em;
+}
