@@ -312,7 +312,7 @@ main {
 }
 
 .product-image,
-.product-detail {
+.product-info {
     position: relative;
     width: 100%;
 }
@@ -324,7 +324,7 @@ main {
         padding-right: 2em;
     }
 
-    .product-detail {
+    .product-info {
         flex-basis: 0;
         flex-grow: 1;
         max-width: 100%;
@@ -407,11 +407,27 @@ main {
     font-weight: 500;
 }
 
-.product-description {
+.product-details {
     margin: .5em 0;
 }
 
-.product-description p {
+.product-details h4 {
+    color: #000;
+    font-weight: 600;
+    margin-bottom: .5em;
+}
+
+.product-details ul {
+    margin: 0;
+    padding-left: 1em;
+}
+
+.product-details li {
     color: #777;
+    font-size: .875em;
     line-height: 1.25;
+}
+
+.product-details li + li {
+    margin-top: .125em;
 }

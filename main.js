@@ -69,7 +69,7 @@ Vue.component('app-product', {
                     </div>
                 </div>
             </div>
-            <div class="product-detail">
+            <div class="product-info">
                 <div class="product-content">
                     <div class="product-title">
                         <h1>{{ product }}</h1>
@@ -87,8 +87,11 @@ Vue.component('app-product', {
                         <p>{{ inStock ? 'In Stock' : 'Out of stock' }}</p>
                     </div>
 
-                    <div class="product-description">
-                        <p>{{ description }}</p>
+                    <div class="product-details">
+                        <h4>Detail(s):</h4>
+                        <ul>
+                            <li v-for="detail in details">{{ detail }}</li>
+                        </ul>
                     </div>
 
                     <button type="button" class="btn is-green" @click="addToCart">Add To Cart</button>
@@ -100,7 +103,12 @@ Vue.component('app-product', {
     data() {
         return {
             product: 'iPhone Case',
-            description: 'Designed for iPhone 7 / iPhone 8, this sillicone case fits snugly over the volume buttons, side button and curves of your device without adding bulk',
+            details: [
+                "Designed for iPhone 8, this silicone case fits snugly over the volume buttons, side button, and curves of your device without adding bulk",
+                "A soft microfiber lining on the inside helps protect your iPhone.",
+                "The silky-soft finish of the silicone exterior feels great in your hand.",
+                "And you can keep it on all the time, even when you’re charging wirelessly."
+            ],
             image: 'https://images-na.ssl-images-amazon.com/images/I/419rCJZ2xfL._SL1024_.jpg',
             inStock: true,
             price: 15,
