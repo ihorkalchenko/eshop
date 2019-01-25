@@ -87,6 +87,17 @@ Vue.component('app-product', {
                         <p>{{ inStock ? 'In Stock' : 'Out of stock' }}</p>
                     </div>
 
+                    <div class="product-colors">
+                        <div 
+                            class="variant"
+                            v-for="variant in variants"
+                            :key="variant.variantId"
+                            :style="{backgroundColor: variant.variantColor}"
+                            @mouseover="updateVariant(variant.variantImage)"
+                        >
+                        </div>
+                    </div>
+
                     <div class="product-details">
                         <h4>Detail(s):</h4>
                         <ul>
@@ -103,22 +114,47 @@ Vue.component('app-product', {
     data() {
         return {
             product: 'iPhone Case',
+            sku: 2232,
+            price: 15,
+            inStock: true,
+            image: 'https://images-na.ssl-images-amazon.com/images/I/419rCJZ2xfL._SL1024_.jpg',
             details: [
                 "Designed for iPhone 8, this silicone case fits snugly over the volume buttons, side button, and curves of your device without adding bulk",
                 "A soft microfiber lining on the inside helps protect your iPhone.",
                 "The silky-soft finish of the silicone exterior feels great in your hand.",
                 "And you can keep it on all the time, even when you’re charging wirelessly."
             ],
-            image: 'https://images-na.ssl-images-amazon.com/images/I/419rCJZ2xfL._SL1024_.jpg',
-            inStock: true,
-            price: 15,
-            sku: 12345678
+            variants: [
+                {
+                    variantId: 2232,
+                    variantColor: 'black',
+                    variantImage: 'https://images-na.ssl-images-amazon.com/images/I/41a3A179dIL._SL1024_.jpg'
+                },
+                {
+                    variantId: 2233,
+                    variantColor: 'white',
+                    variantImage: 'https://images-na.ssl-images-amazon.com/images/I/412kSjgSfAL._SL1024_.jpg'
+                },
+                {
+                    variantId: 2234,
+                    variantColor: 'red',
+                    variantImage: 'https://images-na.ssl-images-amazon.com/images/I/417Cse5NZpL._SL1024_.jpg'
+                },
+                {
+                    variantId: 2235,
+                    variantColor: 'darkblue',
+                    variantImage: 'https://images-na.ssl-images-amazon.com/images/I/419rCJZ2xfL._SL1024_.jpg'
+                }
+            ]
         }
     },
 
     methods: {
-        addToCart() {
+        addToCart: function() {
             this.$emit('add-to-cart');
+        },
+        updateVariant: function(variantImage) {
+            this.image = variantImage;
         }
     },
 

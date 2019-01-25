@@ -360,6 +360,7 @@ main {
     top: 0;
     bottom: 0;
     position: absolute;
+    overflow: hidden;
 }
 
 .full-image img {
@@ -369,6 +370,10 @@ main {
     max-width: 100%;
     margin: auto;
 }
+
+
+
+
 
 /* product content*/
 .product-content {
@@ -395,6 +400,27 @@ main {
     font-weight: 500;
     letter-spacing: 0.1px;
     text-transform: uppercase;
+}
+
+.product-colors {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: .5em;
+}
+
+.product-colors .variant {
+    flex: 0 0 32px;
+    max-width: 32px;
+    height: 32px;
+    margin: .5em .5em 0 0;
+    opacity: 1;
+    cursor: pointer;
+    box-shadow: 0 0 2px 0 #ddd;
+    transition: all .3s ease;
+}
+
+.product-colors .variant:hover {
+    opacity: .5;
 }
 
 .product-price {
